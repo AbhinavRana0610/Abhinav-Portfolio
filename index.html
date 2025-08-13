@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Abhinav</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap"
+    rel="stylesheet"
+  </head>
+
+  <body
+    class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white"
+  >
+    <div
+      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"
+    >
+      <img src="./images/header-bg-color.png" alt="" class="w-full" />
+    </div>
+
+    <nav
+      class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
+    >
+      <div class="w-28 cursor-pointer mr-14 dark:hidden">
+        <h1 class="text-3xl font-bold text-black">
+          abhinav<span class="text-[#B923DF] text-4xl">.</span>
+        </h1>
+      </div>
+      <div class="w-28 cursor-pointer mr-14 hidden dark:block">
+        <h1 class="text-3xl font-bold text-white">
+          abhinav<span class="text-[#B923DF] text-4xl">.</span>
+        </h1>
+      </div>
+      <ul
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent"
+      >
+        <li>
+          <a href="#top" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Home</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >About me</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Skills & Tools</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a href="#work" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >My Work</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Contact me</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()">
+          <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden" />
+          <img
+            src="./images/sun_icon.png"
+            alt=""
+            class="w-6 hidden dark:block"
+          />
+        </button>
+        <a
+          href="#contact"
+          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 group hover:bg-lightHover dark:hover:bg-darkHover transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+        >
+          Contact
+
+          <!-- Light mode arrow -->
+          <img
+            src="./images/arrow-icon.png"
+            alt=""
+            class="w-3 dark:hidden transform transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:rotate-12 group-hover:scale-110"
+          />
+
+          <!-- Dark mode arrow -->
+          <img
+            src="./images/arrow-icon-dark.png"
+            alt=""
+            class="w-3 hidden dark:block transform transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:rotate-12 group-hover:scale-110"
+          />
+        </a>
+
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+          <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden" />
+          <img
+            src="./images/menu-white.png"
+            alt=""
+            class="w-6 hidden dark:block"
+          />
+        </button>
+      </div>
+      <!-- ----- mobile menu ------  -->
+      <ul
+        id="sideMenu"
+        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white"
+      >
+        <div class="absolute right-6 top-6" onclick="closeMenu()">
+          <img
+            src="./images/close-black.png"
+            alt=""
+            class="w-5 cursor-pointer dark:hidden"
+          />
+          <img
+            src="./images/close-white.png"
+            alt=""
+            class="w-5 cursor-pointer hidden dark:block"
+          />
+        </div>
+        <li>
+          <a href="#top" onclick="closeMenu()" class="relative group px-3 py-1">
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Home</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#about"
+            onclick="closeMenu()"
+            class="relative group px-3 py-1"
+          >
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >About me</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#skills"
+            onclick="closeMenu()"
+            class="relative group px-3 py-1"
+          >
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Skills & Tools</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#work"
+            onclick="closeMenu()"
+            class="relative group px-3 py-1"
+          >
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >My Work</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            onclick="closeMenu()"
+            class="relative group px-3 py-1"
+          >
+            <span
+              class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >Contact me</span
+            >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-[#B923DF] to-[#da7d20] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"
+            ></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ------ header --------------  -->
+
+    <div
+      class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
+    >
+      <img src="./images/profile_pic.jpg" alt="" class="rounded-full w-32" />
+      <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+        Hi! I'm Abhinav Singh
+        <img src="./images/hand-icon.png" alt="" class="w-6" />
+      </h3>
+      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
+        frontend web developer based in Delhi.
+      </h1>
+      <p class="max-w-2xl mx-auto font-Ovo">
+        I’m a frontend developer based in Delhi, India, with hands-on experience
+        building responsive and interactive web applications using HTML, CSS,
+        JavaScript, Tailwind, and React
+      </p>
+      <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        <a
+          href="#contact"
+          class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent"
+        >
+          contact me
+          <img src="./images/right-arrow-white.png" alt="" class="w-4"
+        /></a>
+        <a
+          href="./resume/Abhinav-Singh-FlowCV-Resume-20250511 (1).pdf"
+          download
+          class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black"
+        >
+          my resume <img src="./images/download-icon.png" alt="" class="w-4"
+        /></a>
+      </div>
+    </div>
+
+    <!-- ------------ about me -----------  -->
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+      <h2 class="text-center text-5xl font-Ovo">About me</h2>
+      <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+        <div class="max-w-max mx-auto relative">
+          <img
+            src="./images/profile-image2.jpg"
+            alt=""
+            class="w-64 sm:w-80 rounded-3xl max-w-none"
+          />
+          <div
+            class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center"
+          >
+            <img
+              src="./images/circular-text.png"
+              alt=""
+              class="w-full animate-spin_slow"
+            />
+            <img
+              src="./images/man-technologist..png"
+              alt=""
+              class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            />
+          </div>
+        </div>
+        <div class="flex-1">
+          <p class="mb-10 max-w-2xl font-Ovo">
+            I’m a dedicated Frontend Developer with practical experience from a
+            professional course, a virtual internship, and personal projects. I
+            specialize in building responsive UIs using HTML, CSS, JavaScript,
+            Tailwind, and React, and I’m eager to contribute and grow in a team
+            environment.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+            >
+              <img
+                src="./images/code-icon.png"
+                alt=""
+                class="w-7 mt-3 dark:hidden"
+              />
+              <img
+                src="./images/code-icon-dark.png"
+                alt=""
+                class="w-7 mt-3 hidden dark:block"
+              />
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Languages
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
+                HTML, CSS, Tailwind, JavaScript, React Js
+              </p>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+            >
+              <img
+                src="./images/edu-icon.png"
+                alt=""
+                class="w-7 mt-3 dark:hidden"
+              />
+              <img
+                src="./images/edu-icon-dark.png"
+                alt=""
+                class="w-7 mt-3 hidden dark:block"
+              />
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Education
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
+                Bachelor of Computer Application
+              </p>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+            >
+              <img
+                src="./images/project-icon.png"
+                alt=""
+                class="w-7 mt-3 dark:hidden"
+              />
+              <img
+                src="./images/project-icon-dark.png"
+                alt=""
+                class="w-7 mt-3 hidden dark:block"
+              />
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">
+                Projects
+              </h3>
+              <p class="text-gray-600 text-sm dark:text-white/80">
+                Built more than 5 projects
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------ skills & tools ------------  -->
+    <div id="skills" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">My expertise</h4>
+      <h2 class="text-center text-5xl font-Ovo">Skills & Tools</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        I work with modern technologies and tools to build high-quality web
+        applications.
+      </p>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+      >
+        <!-- Languages and Markup -->
+        <div
+          class="border-[0.5px] border-gray-400 rounded-xl p-8 hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-white">
+            Languages and Markup
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="./images/html.c22f4351.svg" alt="HTML" class="w-6" />
+              <span>HTML5</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img src="./images/css.3e26a99b.svg" alt="CSS" class="w-6" />
+              <span>CSS3</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/javascript.66332293.svg"
+                alt="JavaScript"
+                class="w-6"
+              />
+              <span>JavaScript (ES6+)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Development Tools (moved up) -->
+        <div
+          class="border-[0.5px] border-gray-400 rounded-xl p-8 hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-white">
+            Development Tools
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/icons8-vs-code.svg"
+                alt="VS Code"
+                class="w-6"
+              />
+              <span>VS Code</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img src="./images/icons8-npm.svg" alt="NPM" class="w-6" />
+              <span>NPM</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/icons8-chrome.svg"
+                alt="Chrome DevTools"
+                class="w-6"
+              />
+              <span>Chrome DevTools</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks and Libraries -->
+        <div
+          class="border-[0.5px] border-gray-400 rounded-xl p-8 hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-white">
+            Frameworks and Libraries
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="./images/react.1d4fe787.svg" alt="React" class="w-6" />
+              <span>React.js</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/icons8-redux.svg"
+                alt="Redux Toolkit"
+                class="w-6"
+              />
+              <span>Redux Toolkit</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/tailwind.839d95f8.svg"
+                alt="Tailwind"
+                class="w-6"
+              />
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Deployment -->
+        <div
+          class="border-[0.5px] border-gray-400 rounded-xl p-8 hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50"
+        >
+          <h3 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-white">
+            Tools & Deployment
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="./images/git.png" alt="Git" class="w-6" />
+              <span>Git & GitHub</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/vercel.4d820ebc.svg"
+                alt="Vercel"
+                class="w-6"
+              />
+              <span>Vercel</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img
+                src="./images/netlify.18e607e4.svg"
+                alt="Netlify"
+                class="w-6"
+              />
+              <span>Netlify</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img src="./images/figma.png" alt="Figma" class="w-6" />
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------ my work ------------  -->
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
+      <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        Welcome to my web development portfolio! Explore a collection of
+        projects showcasing my expertise in front-end development.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 my-10 gap-10 dark:text-black">
+        <div class="p-3 bg-purple-950 rounded-lg overflow-hidden">
+          <div
+            class="bg-[url('./images/Aleph_Beauty_Website.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group min-h-[300px]"
+          >
+            <div
+              class="bg-white/40 backdrop-blur-sm w-10/12 h-48 rounded-md absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-3 flex flex-col justify-between duration-500 group-hover:bottom-6 overflow-auto"
+            >
+              <div class="flex-1">
+                <h2 class="font-semibold text-base mb-1">
+                  Aleph Beauty Website
+                </h2>
+                <p class="text-xs text-gray-900 leading-tight">
+                  Developed a responsive e-commerce website for Aleph Beauty
+                  using HTML5, CSS3, and JavaScript with mobile-first design and
+                  cross-device compatibility. Implemented interactive features
+                  including product showcases, testimonial carousels, and custom
+                  animations while maintaining the brand's focus on
+                  sustainability and luxury.
+                </p>
+              </div>
+
+              <a
+                href="https://aleph-phi.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Project"
+              >
+                <div
+                  class="self-end border rounded-full border-black w-7 h-7 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                >
+                  <img src="./images/send-icon.png" alt="" class="w-3" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-purple-950 rounded-lg overflow-hidden">
+          <div
+            class="bg-[url('./images/Interior_Design_Website.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group min-h-[300px]"
+          >
+            <div
+              class="bg-white/40 backdrop-blur-sm w-10/12 h-48 rounded-md absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-3 flex flex-col justify-between duration-500 group-hover:bottom-6 overflow-auto"
+            >
+              <div class="flex-1">
+                <h2 class="font-semibold text-base mb-1">
+                  Interior Design Website
+                </h2>
+                <p class="text-xs text-gray-900 leading-tight">
+                  A responsive landing page for an interior design agency,
+                  showcasing services, featured work, and contact info — built
+                  with HTML, CSS, and JavaScript.
+                </p>
+              </div>
+
+              <a
+                href="https://interior-website-six.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Project"
+              >
+                <div
+                  class="self-end border rounded-full border-black w-7 h-7 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                >
+                  <img src="./images/send-icon.png" alt="" class="w-3" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-purple-950 rounded-lg overflow-hidden">
+          <div
+            class="bg-[url('./images/Legion.dev.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group min-h-[300px]"
+          >
+            <div
+              class="bg-white/40 backdrop-blur-sm w-10/12 h-48 rounded-md absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-3 flex flex-col justify-between duration-500 group-hover:bottom-6 overflow-auto"
+            >
+              <div class="flex-1">
+                <h2 class="font-semibold text-base mb-1">Legion.dev</h2>
+                <p class="text-xs text-gray-900 leading-tight">
+                  Legion is a sleek, dark-themed landing page built for a
+                  creative studio or digital agency. It showcases services such
+                  as web design, branding, UI/UX and uses modern layout and
+                  hover effects to leave a strong visual impact. The site is
+                  tailored to present creative work and attract clients in the
+                  design or tech space.
+                </p>
+              </div>
+
+              <a
+                href="https://legions-dev.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Project"
+              >
+                <div
+                  class="self-end border rounded-full border-black w-7 h-7 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                >
+                  <img src="./images/send-icon.png" alt="" class="w-3" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-purple-950 rounded-lg overflow-hidden">
+          <div
+            class="bg-[url('./images/Movie_Streaming_App_Popcorn_Box.png')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group min-h-[300px]"
+          >
+            <div
+              class="bg-white/40 backdrop-blur-sm w-10/12 h-48 rounded-md absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-3 flex flex-col justify-between duration-500 group-hover:bottom-6 overflow-auto"
+            >
+              <div class="flex-1">
+                <h2 class="font-semibold text-base mb-1">
+                  Movie Streaming App -Popcorn-Box
+                </h2>
+                <p class="text-xs text-gray-900 leading-tight">
+                  A React-based movie browsing app powered by the TMDB API.
+                  Users can search for movies, view posters, ratings, and
+                  overviews in a clean, responsive UI. Built with functional
+                  components, useState/useEffect, and real-time API integration.
+                </p>
+              </div>
+
+              <a
+                href="https://popcorn-box-murex.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Project"
+              >
+                <div
+                  class="self-end border rounded-full border-black w-7 h-7 flex-shrink-0 flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition"
+                >
+                  <img src="./images/send-icon.png" alt="" class="w-3" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="group w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover hover:scale-105 hover:shadow-md transition-all ease-in-out hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+      >
+        Show more
+
+        <!-- Light mode arrow -->
+        <img
+          src="./images/right-arrow-bold.png"
+          alt=""
+          class="w-4 transform transition-transform duration-300 group-hover:translate-x-1 dark:hidden"
+        />
+
+        <!-- Dark mode arrow -->
+        <img
+          src="./images/right-arrow-bold-dark.png"
+          alt=""
+          class="w-4 transform transition-transform duration-300 group-hover:translate-x-1 hidden dark:block"
+        />
+      </a>
+    </div>
+
+    <!-- ----- contact -------------  -->
+
+    <div
+      id="contact"
+      class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none"
+    >
+      <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
+      <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        I'd love to hear from you! If you have any questions, comments or
+        feedback, please use the form below.
+      </p>
+      <form
+        method="POST"
+        action="https://api.web3forms.com/submit"
+        class="max-w-2xl mx-auto"
+      >
+        <!------- Enter your web3 form access key below ------------>
+        <input
+          type="hidden"
+          name="access_key"
+          value="804656f2-e935-40b0-a364-3f89b6ebb9d5"
+        />
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+          <input
+            type="text"
+            placeholder="Enter your name"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+            required
+            name="name"
+          />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+            required
+            name="email"
+          />
+        </div>
+        <textarea
+          rows="6"
+          placeholder="Enter your message"
+          class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"
+          required
+          name="message"
+        ></textarea>
+
+        <button
+          class="group py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover hover:scale-105 hover:shadow-md transition-all ease-in-out hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+        >
+          Submit now
+          <img
+            src="./images/right-arrow-white.png"
+            alt=""
+            class="w-4 transform transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </button>
+      </form>
+    </div>
+
+    <!-- ----------- footer ---------  -->
+    <div class="mt-20">
+      <div class="text-center">
+        <div class="w-36 mx-auto mb-2 dark:hidden">
+          <h1 class="text-3xl font-bold text-black">
+            abhinav<span class="text-[#B923DF] text-4xl">.</span>
+          </h1>
+        </div>
+        <div class="w-36 mx-auto mb-2 hidden dark:block">
+          <h1 class="text-3xl font-bold text-white">
+            abhinav<span class="text-[#B923DF] text-4xl">.</span>
+          </h1>
+        </div>
+        <div class="w-max flex items-center gap-2 mx-auto">
+          <img src="./images/mail_icon.png" alt="" class="w-6 dark:hidden" />
+          <img
+            src="./images/mail_icon_dark.png"
+            alt=""
+            class="w-6 hidden dark:block"
+          />
+          abhinavsinghrana916@gmail.com
+        </div>
+      </div>
+      <div
+        class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6"
+      >
+        <p>© 2025 Abhinav Singh. All rights reserved.</p>
+        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+          <li>
+            <a target="_blank" href="https://github.com/AbhinavRana0610"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/abhinav-singh6/"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/abhinav.rana.58152559/"
+              >Facebook</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
